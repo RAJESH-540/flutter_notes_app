@@ -73,12 +73,12 @@ class _NotesHomeScreenState extends State<NotesHomeScreen> {
                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     height: 220,
-                    width: 180,
+                    width: 170,
                     decoration: BoxDecoration(
                        color: Color(0xffFCA590),
-                      borderRadius: BorderRadius.circular(16)
+                      borderRadius: BorderRadius.circular(24)
                         
                     ),
                     child: Center(
@@ -94,7 +94,7 @@ class _NotesHomeScreenState extends State<NotesHomeScreen> {
                              children: [
                                Image.asset("assets/images/viha.webp",
                                fit: BoxFit.contain,height: 80,
-                               width: 150,),
+                               width: 100,),
                              ],
                            )
 
@@ -104,14 +104,15 @@ class _NotesHomeScreenState extends State<NotesHomeScreen> {
                   ),
                   Container(
                     height: 220,
-                    width: 180,
+                    width: 170,
+                    // padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                        color: Color(0xffFFFFA0),
-                      borderRadius: BorderRadius.circular(16)
+                        borderRadius: BorderRadius.circular(24)
                     ),
                      child: const Center(
                        child: Padding(
-                         padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                          child: Column(
                            crossAxisAlignment: CrossAxisAlignment.start,
                            mainAxisAlignment: MainAxisAlignment.center,
@@ -134,7 +135,7 @@ class _NotesHomeScreenState extends State<NotesHomeScreen> {
               ),
            SizedBox(height: 28,),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 26, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 26, vertical: 14),
            margin: EdgeInsets.symmetric(horizontal: 12),
           height: 150,
           width: MediaQuery.of(context).size.width,
@@ -148,7 +149,7 @@ class _NotesHomeScreenState extends State<NotesHomeScreen> {
                children: [
                  Text("Tax payment before the end  of march", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                  Text(
-                     "This is remanider note, so as  not to forget to pay\ntaxes before the end of march. Don't miss it.you could\nbe fined.\nList of assets must be reported"),
+                     "This is remanider note, so as  not to forget to pay\ntaxes before the end of march. Don't miss it.you could be fined.\nList of assets must be reported"),
 
 
                ],
