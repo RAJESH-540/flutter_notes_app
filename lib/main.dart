@@ -7,7 +7,7 @@ void main() {
   Provider.debugCheckInvalidValueType = null;
   runApp(MultiProvider(
     providers: [
-      Provider<NotesProvider>(create: (_)=>NotesProvider()),
+      ChangeNotifierProvider<NotesProvider>(create: (_)=>NotesProvider()),
     ],
       child: const MyApp()));
 }

@@ -22,7 +22,9 @@ class NotesProvider extends ChangeNotifier {
 
   Future<List<NotesModel>> getAllData() async {
     fetchInitialData();
+    notifyListeners();
     return listNotes;
+
   }
 
   void update(NotesModel notesId) async {
