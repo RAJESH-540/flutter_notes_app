@@ -31,31 +31,35 @@ class DbHelper {
     });
   }
 
-  insertData(NotesModel notesModel) async {
+  Future<int> insertData(NotesModel notesModel) async {
     var db = await getDb();
-    db.insert(note_table, notesModel.toMap());
+    var result = db.insert(note_table, notesModel.toMap());
+    return result;
   }
-   Future<List<NotesModel>> getData() async{
-     var db = await getDb();
-     List<NotesModel>listNotes=[];
-     var data = await db.query(note_table);
-     for(Map<String, dynamic>eachData in data){
-        NotesModel notesModel=NotesModel.fromMap(eachData);
-        listNotes.add(notesModel);
 
-     }
-      return listNotes;
-
-   }
-    Future<void> updateNotes( NotesModel notesModel)async{
-     var db= await getDb();
-      db.update(note_table, notesModel.toMap(), where: "$note_id= ${notesModel.id}");
+  Future<List<NotesModel>> getData() async {
+    var db = await getDb();
+    List<NotesModel> listNotes = [];
+    var data = await db.query(note_table);
+    for (Map<String, dynamic> eachData in data) {
+      NotesModel notesModel = NotesModel.fromMap(eachData);
+      listNotes.add(notesModel);
     }
+    return listNotes;
+  }
 
-     Future<bool> deleteNotes(int id)async{
-     var db= await getDb();
-      var count =  await db.delete(note_table, where: "$note_id=?", whereArgs: [id.toString()]);
-       return count>0;
-     }
+  Future<int> updateNotes(NotesModel notesModel) async {
+    var db = await getDb();
+    var result = db.update(note_table, notesModel.toMap(),
+        where: "$note_id= ${notesModel.id}");
+    return result;
+  }
+
+  Future<bool> deleteNotes(int id) async {
+    var db = await getDb();
+    var count = await db
+        .delete(note_table, where: "$note_id=?", whereArgs: [id.toString()]);
+    return count > 0;
+  }
 
 }

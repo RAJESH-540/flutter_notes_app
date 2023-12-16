@@ -15,8 +15,8 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         hintText: hint,
-        border:UnderlineInputBorder(
-          borderRadius: BorderRadius.circular(16)
+        border:OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8)
         ) ,
       ),
     );
